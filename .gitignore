@@ -2,3 +2,5 @@
 *.pyc
 venv
 pyelasticsearch
+.idea/.name
+.idea/workspace.xml
