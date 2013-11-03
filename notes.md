@@ -48,3 +48,6 @@ UnicodeDecodeError: 'ascii' codec can't decode byte 0x91 in position 5: ordinal 
 # Also need to have ant and ivy installed
 # when working with pig
 > sudo apt-get install ant ivy
+
+# Downloaded this mongo driver from here
+# http://central.maven.org/maven2/org/mongodb/mongo-java-driver/2.11.3/
