@@ -45,3 +45,6 @@ Traceback (most recent call last):
     datum = datum.encode("utf-8")
 UnicodeDecodeError: 'ascii' codec can't decode byte 0x91 in position 5: ordinal not in range(128)
 
+# Also need to have ant and ivy installed
+# when working with pig
+> sudo apt-get install ant ivy
