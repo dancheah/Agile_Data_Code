@@ -16,8 +16,11 @@ def sent_counts():
   sent_counts = db['sent_counts'].find()
   results = {}
   results['keys'] = 'from', 'to', 'total'
-  #results['values'] = [[s['from'], s['to'], s['total']] for s in sent_counts if re.search('apache', s['from']) or re.search('apache', s['to'])]
-  results['values'] = [[s['from'], s['to'], s['total']] for s in sent_counts]
+  results['values'] = []
+  for s in sent_counts:
+    if s['from'] != None and s['to'] != None:
+      if re.search('sigsegv', s['from']) or re.search('sigsegv', s['to']):
+        results['values'].append([s['from'], s['to'], s['total']])
   results['values'] = results['values'][0:17]
   return render_template('table.html', results=results)
 
