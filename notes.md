@@ -51,3 +51,6 @@ UnicodeDecodeError: 'ascii' codec can't decode byte 0x91 in position 5: ordinal 
 
 # Downloaded this mongo driver from here
 # http://central.maven.org/maven2/org/mongodb/mongo-java-driver/2.11.3/
+
+# elasticsearch URL slightly different from documents
+# curl -XGET 'http://localhost:9200/inbox/sentcounts/_search?q=sigsegv&pretty=true'
