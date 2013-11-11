@@ -1,16 +1,17 @@
 /* Set Home Directory - where we install software */
-%default HOME `echo /opt/personal/pkg/pig-0.12.0`
+%default HOME `echo /Users/dc/workplace/jars`
 
-REGISTER $HOME/build/ivy/lib/Pig/avro-1.7.4.jar
-REGISTER $HOME/build/ivy/lib/Pig/json-simple-1.1.jar
-REGISTER $HOME/contrib/piggybank/java/piggybank.jar
+REGISTER $HOME/avro-1.7.4.jar
+REGISTER $HOME/json-simple-1.1.jar
+REGISTER $HOME/piggybank.jar
 
 DEFINE AvroStorage org.apache.pig.piggybank.storage.avro.AvroStorage();
 
 rmf /tmp/sent_counts.txt
 
 /* Load the emails in avro format (edit the path to match where you saved them) using the AvroStorage UDF from Piggybank */
-messages = LOAD '/home/dc/my_inbox_directory' USING AvroStorage();
+/* Need to figure out a way to access env HOME dir */
+messages = LOAD '/Users/dc/my_inbox_directory' USING AvroStorage();
 
 /* Filter nulls, they won't help */
 messages = FILTER messages BY (from IS NOT NULL) AND (tos IS NOT NULL);
