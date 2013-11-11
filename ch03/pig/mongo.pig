@@ -1,5 +1,5 @@
 /* Set Home Directory - where we install software */
-%default HOME `echo /home/dc/workplace/jars`
+%default HOME `echo /Users/dc/workplace/jars`
 
 REGISTER $HOME/mongo-java-driver-2.11.3.jar
 REGISTER $HOME/mongo-hadoop-core-1.1.0.jar
